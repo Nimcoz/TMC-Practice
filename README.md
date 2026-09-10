@@ -57,6 +57,16 @@ This is an expert practice tool. Invalid actor/room combinations and destructive
 save edits can break the current room or progress. Keep backups. No guarantee is
 made for every emulator, real hardware, ROM revision or arbitrary actor variant.
 
+## Contributions by prior agreement only
+
+Contributions to the official TMC Practice project are accepted only by prior
+agreement with [Nimcoz](https://github.com/Nimcoz). Before starting work intended
+for inclusion or submitting a pull request, open an issue and wait for explicit
+approval. Bug reports are welcome without prior agreement.
+
+**Mitarbeit nur nach vorheriger Absprache mit Nimcoz.** See
+[CONTRIBUTING.md](CONTRIBUTING.md) for the German and English policy.
+
 ## Reporting a problem
 
 Use the repository's **Issues** tab. Include the region, patch version, emulator
