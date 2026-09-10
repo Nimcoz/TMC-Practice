@@ -1,0 +1,57 @@
+{
+  "project": "TMC Practice",
+  "version": "v1.0.0",
+  "regions": {
+    "USA": {
+      "patch": "TMC-Practice-v1.0.0-USA.bps",
+      "patch_bytes": 77448,
+      "patch_sha256": "557E139191B88CFB3BD58EFDB0BD246C0A334713F113E39455501E031BEC68F0",
+      "original_rom_sha1": "B4BD50E4131B027C334547B4524E2DBBD4227130",
+      "patched_rom_sha256": "F904805865084590157C9592DE791513A49DA9570B4B40C81343E75D37E3747C",
+      "exact_tested_patch_bytes": true,
+      "reapplied_on_original_rom": true,
+      "runtime_source_unchanged": true
+    },
+    "Europe": {
+      "patch": "TMC-Practice-v1.0.0-Europe.bps",
+      "patch_bytes": 77552,
+      "patch_sha256": "E94EA90CA949D47EBEED89FC55643170D483CFD29BDC960C974C8B9E33F59548",
+      "original_rom_sha1": "CFF199B36FF173FB6FAF152653D1BCCF87C26FB7",
+      "patched_rom_sha256": "62D637180364C24194A0027A993DB0A1FE69B7F6D753C41E02884D407C09FD25",
+      "exact_tested_patch_bytes": true,
+      "reapplied_on_original_rom": true,
+      "runtime_source_unchanged": true
+    },
+    "Japan": {
+      "patch": "TMC-Practice-v1.0.0-Japan.bps",
+      "patch_bytes": 77556,
+      "patch_sha256": "A47CF4F95409795019A687E475E1C9DCDDCD301DA1419BA2F82891775E6E055B",
+      "original_rom_sha1": "6C5404A1EFFB17F481F352181D0F1C61A2765C5D",
+      "patched_rom_sha256": "753F68A149F50089EE80A554527DE730BE4317F17B2F8C7D7A32187529E4AD78",
+      "exact_tested_patch_bytes": true,
+      "reapplied_on_original_rom": true,
+      "runtime_source_unchanged": true
+    }
+  },
+  "automated_mgba_suites": 166,
+  "usa_suites": 53,
+  "eu_jp_suites": 113,
+  "complete_native_scene_replays": true,
+  "native_save_restore_bytes": 1204,
+  "eu_languages_tested": [
+    "English",
+    "French",
+    "German",
+    "Spanish",
+    "Italian"
+  ],
+  "native_blank_eeprom_new_game_tested": [
+    "Europe",
+    "Japan"
+  ],
+  "user_report": "Tester reported menu opens and No-Clip works in tested locations; exact per-region Android matrix not specified.",
+  "physical_hardware_tested": false,
+  "publication_runtime_changes": false,
+  "qa_method": "Exact-hash mGBA suites, independent ROM reconstruction, fresh source rebuilds, framebuffer and EEPROM audits.",
+  "private_fixtures_distributed": false
+}
