@@ -1,85 +1,53 @@
 # TMC Practice
 
-A runtime practice and exploration menu for **The Legend of Zelda: The Minish Cap**.
-Supports the original **USA, Europe and Japan** releases through three separate BPS patches.
+A practice and exploration menu for **The Legend of Zelda: The Minish Cap**, supporting USA, Europe and Japan.
 
 [English](docs/README_EN.md) · [Deutsch](docs/README_DE.md) · [Français](docs/README_FR.md) · [Español](docs/README_ES.md) · [Italiano](docs/README_IT.md) · [日本語](docs/README_JA.md)
 
-Full user guides are available in all six languages above. The Practice menu itself remains in English.
+## Download
 
-[Controls and features](docs/USER_GUIDE.md) · [Build from source](docs/BUILDING.md) · [Verification](docs/VERIFICATION.md)
+**[TMC Practice v1.0.0](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.0)** — choose the BPS patch for your original ROM's region:
 
-## Download and install
+[USA](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-USA.bps) · [Europe](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-Europe.bps) · [Japan](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-Japan.bps)
 
-Open the [Releases page](https://github.com/Nimcoz/TMC-Practice/releases) and download **TMC Practice v1.0.0**.
-Choose exactly one patch:
+1. Back up your normal in-game save.
+2. Apply the patch to your **unmodified original ROM** with a BPS-compatible patcher.
+3. Open the patched `.gba` in your emulator with a normal save from the same region.
 
-| Your original game | Patch |
-| --- | --- |
-| USA | `TMC-Practice-v1.0.0-USA.bps` |
-| Europe — English, French, German, Spanish, Italian | `TMC-Practice-v1.0.0-Europe.bps` |
-| Japan | `TMC-Practice-v1.0.0-Japan.bps` |
+Do not stack patches or load emulator savestates from older builds.
+See [ROM compatibility](docs/ROM_COMPATIBILITY.md) and the language guides above for details.
 
-1. Back up your regular in-game save.
-2. Apply the matching BPS patch to your **unmodified original ROM** using a BPS-compatible patcher.
-3. Open the resulting `.gba` in your emulator and load a normal same-region save.
-4. Press **L + R + Select** to open or close the Practice menu.
+## Controls
 
-Do not stack regional patches, patch an already modified ROM, or load emulator
-savestates from older builds. No ROMs, save files or emulator savestates are included.
-Exact supported ROM fingerprints are listed in [ROM compatibility](docs/ROM_COMPATIBILITY.md).
+- **L + R + Select:** open/close the menu (saved custom bindings take precedence).
+- **D-pad:** select options and change values.
+- **A:** activate/confirm. **B:** back/cancel.
 
-## What is included?
+The Practice menu is in **English**; the original game's language is preserved.
+Follow on-screen confirmations for destructive actions and keep a save backup.
+
+## Features
 
 - Practice timer and on-screen debug information.
-- Player, movement, inventory and individual element controls.
-- No-Clip and exploration tools, including interiors and gaps.
-- Room warps, favorites and native intro / ending replays.
-- Flag inspection/editing and collection/completion actions with confirmations.
-- Free camera, resource cheats, boss-inclusive Enemy Freeze and Break Free.
-- Named raw actor spawner, individual freeze/remove/position editing and teleporting in both directions.
-- Infinite Time for supported native countdowns and effects.
-- Persistent menu settings, themes and configurable button combinations.
-- Menu access over supported native inventory, dialogue, intro and ending screens.
+- No-Clip, free camera and movement tools.
+- Room warps, favorites and intro/ending replays.
+- Inventory, elements, flags and collection controls.
+- Named actor spawner, freeze, removal and two-way teleporting.
+- Resource cheats, Enemy Freeze, Break Free and Infinite Time.
+- Saved settings, themes and custom button combinations.
 
 ![Practice menu](docs/images/menu.png)
-![Story and ending replay choices](docs/images/warps.png)
 
-The Practice interface is in English. The original European language selection
-and Japanese game text remain intact. See the [user guide](docs/USER_GUIDE.md)
-for the exact feature scope and important safety limits.
+[Full controls, feature scope and safety](docs/USER_GUIDE.md)
 
-## Tested, with honest limits
+## Support and contributions
 
-The release uses the existing tested binaries without changing their runtime:
-**53 USA suites + 113 EU/JP suites = 166 automated mGBA suites**.
-This includes complete intro/ending replays, save restoration, native save/reload,
-menu/HUD screenshots, both regional new-game starts and all five EU languages.
-The project tester also confirmed menu opening and No-Clip in their own emulator test.
+[Report a bug](https://github.com/Nimcoz/TMC-Practice/issues) with your region, emulator/version and steps to reproduce it. Do not upload ROMs, private saves or credentials.
 
-This is an expert practice tool. Invalid actor/room combinations and destructive
-save edits can break the current room or progress. Keep backups. No guarantee is
-made for every emulator, real hardware, ROM revision or arbitrary actor variant.
+**Contributions require prior agreement with Nimcoz.** Bug reports are welcome without prior agreement. [Contribution policy](CONTRIBUTING.md)
 
-## Contributions by prior agreement only
+## Project information
 
-Contributions to the official TMC Practice project are accepted only by prior
-agreement with [Nimcoz](https://github.com/Nimcoz). Before starting work intended
-for inclusion or submitting a pull request, open an issue and wait for explicit
-approval. Bug reports are welcome without prior agreement.
+[Build from source](docs/BUILDING.md) · [Test results](docs/VERIFICATION.md) · [Credits](CREDITS.md) · [Rights and third-party notices](THIRD_PARTY_NOTICES.md)
 
-**Mitarbeit nur nach vorheriger Absprache mit Nimcoz.** See
-[CONTRIBUTING.md](CONTRIBUTING.md) for the German and English policy.
-
-## Reporting a problem
-
-Use the repository's **Issues** tab. Include the region, patch version, emulator
-and version, exact steps, and a screenshot if useful. Do **not** attach a ROM,
-private save, login information or other personal data.
-
-## Credits and rights
-
-See [CREDITS.md](CREDITS.md) and [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md).
-This is an unofficial fan modification, not affiliated with or endorsed by Nintendo.
-Source is provided for inspection and reproducible builds; no new blanket
-open-source license is assigned by this release preparation.
+Unofficial fan project, not affiliated with or endorsed by Nintendo. No ROMs are distributed.
