@@ -1,50 +1,50 @@
 # TMC Practice v1.0.0
 
-First public-release package of the existing tested TMC Practice build,
-with separate **USA, Europe and Japan BPS patches**.
+The first public release of TMC Practice — a speedrun practice and exploration toolkit for **The Legend of Zelda: The Minish Cap**.
 
-## Download
+## Downloads
 
-- `TMC-Practice-v1.0.0-USA.bps` — original USA release.
-- `TMC-Practice-v1.0.0-Europe.bps` — original European multilingual release.
-- `TMC-Practice-v1.0.0-Japan.bps` — original Japanese release.
-- `TMC-Practice-v1.0.0-source.zip` — source, build tools and tests; no ROM/save files.
+Choose the BPS patch for your original ROM's region.
 
-Apply exactly one matching patch to a **clean original ROM**. Back up your save,
-start the patched ROM normally, and press **L + R + Select**. Do not use an old
-emulator savestate or apply this over another patch. No ROMs are provided.
+| ROM region | Download |
+| --- | --- |
+| USA | [USA BPS](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-USA.bps) |
+| Europe | [Europe BPS](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-Europe.bps) |
+| Japan | [Japan BPS](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-Japan.bps) |
 
-## Features
+[Source code](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-source.zip) — includes build tools and tests.
 
-Practice timer/debug HUD, No-Clip/exploration, inventory and element editing,
-room warps, native intro/ending replays, flag/collection tools, free camera,
-resource cheats, boss-inclusive freeze, Break Free, supported Infinite Time,
-named raw actor spawning/editing and two-way actor teleport, persistent settings/themes.
+## Getting started
 
-For scenes: **WORLD / WARP → STORY INTRO / ENDING / CREDITS**, then A twice.
-Use **RETURN FROM REPLAY** to return. Native game languages are retained;
-Practice menu labels remain English.
+1. Back up your normal in-game save.
+2. Apply one matching BPS patch to an **unmodified original ROM** with a BPS-compatible patcher.
+3. Open the patched ROM in your emulator with a normal save from the same region.
+4. Press **L + R + Select** to open the menu. Saved custom bindings take precedence.
 
-## Verification
+Do not stack patches or load emulator savestates from older builds.
+The Practice menu is in **English**; the original game's language is preserved.
 
-166 automated mGBA suites: 53 USA + 113 EU/JP. Fresh source rebuilds and BPS
-application reproduce the exact tested ROMs. Includes native save/reload,
-full intro/ending/save restoration, modal/HUD pixel comparisons, both regional
-new-game starts and all five European languages. The tester additionally
-confirmed menu opening and No-Clip; there is no recorded complete Android
-acceptance run for each region and no physical-hardware validation.
+## Highlights
 
-These release patches are byte-identical to the previously tested deliveries.
-No runtime feature changes were made during GitHub packaging.
+- Practice timer and on-screen debug information.
+- No-Clip, free camera and movement tools.
+- Room warps, favorites and intro/ending replays.
+- Inventory, elements, flags and collection controls.
+- Actor spawning, freeze, editing and two-way teleportation.
+- Resource cheats, Enemy Freeze, Break Free and Infinite Time.
+- Persistent settings, themes and custom button combinations.
 
-## Important limitations
+## Guides
 
-Arbitrary raw actors can crash or block incompatible rooms. Destructive progress
-edits require confirmation but cannot replace a save backup. Twenty-five actor
-labels remain UNKNOWN by agreement. Menu opening waits for native fades and
-does not interrupt active save writes. Supported retail ROM hashes only.
+[English](https://github.com/Nimcoz/TMC-Practice/blob/main/docs/README_EN.md) · [Deutsch](https://github.com/Nimcoz/TMC-Practice/blob/main/docs/README_DE.md) · [Français](https://github.com/Nimcoz/TMC-Practice/blob/main/docs/README_FR.md) · [Español](https://github.com/Nimcoz/TMC-Practice/blob/main/docs/README_ES.md) · [Italiano](https://github.com/Nimcoz/TMC-Practice/blob/main/docs/README_IT.md) · [日本語](https://github.com/Nimcoz/TMC-Practice/blob/main/docs/README_JA.md)
 
-Please report region, emulator/version and reproduction steps in Issues.
-Do not upload ROMs, private saves or login information.
+[ROM compatibility](https://github.com/Nimcoz/TMC-Practice/blob/main/docs/ROM_COMPATIBILITY.md) · [Feature details and safety](https://github.com/Nimcoz/TMC-Practice/blob/main/docs/USER_GUIDE.md) · [Test results](https://github.com/Nimcoz/TMC-Practice/blob/main/docs/VERIFICATION.md)
 
-Unofficial fan modification. Not affiliated with or endorsed by Nintendo.
+## Support
+
+Keep a backup before editing progress or spawning actors: invalid combinations can crash or block the game.
+[Report a bug](https://github.com/Nimcoz/TMC-Practice/issues) with your region, emulator/version and steps to reproduce it. Do not upload ROMs, private saves or credentials.
+
+[Contributions by prior agreement](https://github.com/Nimcoz/TMC-Practice/blob/main/CONTRIBUTING.md) · [Credits](https://github.com/Nimcoz/TMC-Practice/blob/main/CREDITS.md) · [Rights and third-party notices](https://github.com/Nimcoz/TMC-Practice/blob/main/THIRD_PARTY_NOTICES.md)
+
+Unofficial fan project, not affiliated with or endorsed by Nintendo. No ROMs are distributed.
