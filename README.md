@@ -3,7 +3,11 @@
 A runtime practice and exploration menu for **The Legend of Zelda: The Minish Cap**.
 Supports the original **USA, Europe and Japan** releases through three separate BPS patches.
 
-[Deutsche Anleitung](docs/README_DE.md) · [Controls and features](docs/USER_GUIDE.md) · [Build from source](docs/BUILDING.md) · [Verification](docs/VERIFICATION.md)
+[English](docs/README_EN.md) · [Deutsch](docs/README_DE.md) · [Français](docs/README_FR.md) · [Español](docs/README_ES.md) · [Italiano](docs/README_IT.md) · [日本語](docs/README_JA.md)
+
+Full user guides are available in all six languages above. The Practice menu itself remains in English.
+
+[Controls and features](docs/USER_GUIDE.md) · [Build from source](docs/BUILDING.md) · [Verification](docs/VERIFICATION.md)
 
 ## Download and install
 
