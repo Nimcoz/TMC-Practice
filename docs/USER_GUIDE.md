@@ -1,5 +1,10 @@
 # Controls, feature scope and safety
 
+[English](README_EN.md) · [Deutsch](README_DE.md) · [Français](README_FR.md) · [Español](README_ES.md) · [Italiano](README_IT.md) · [日本語](README_JA.md)
+
+For installation and the complete user guide in your language, choose a link above.
+The Practice menu itself remains in English.
+
 ## Controls
 
 - Default open/close hotkey: **L + R + Select**.
