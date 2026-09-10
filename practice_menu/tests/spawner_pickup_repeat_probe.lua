@@ -1,0 +1,18 @@
+local out=assert(os.getenv('TMC_TEST_OUTPUT'))
+local H=assert(loadfile(out..'../../tests/gameplay_harness.lua'))()
+local function state(tag)
+ H.log(string.format('%s xy=%d,%d action=%d sub=%d anim=%d dir=%d held=%d ctrl=%d flags=%08X selected=%08X status=%s',tag,H.r16(H.P+46),H.r16(H.P+50),H.r8(H.P+12),H.r8(H.P+13),H.r8(H.P+20),H.r8(H.P+21),H.r8(H.S+5),H.r8(H.S+0x8B),H.r32(H.S+0x30),H.r32(H.PM+H.L.actorSelected),emu:readRange(H.PM+H.L.status,28)))
+end
+H.run(function()
+ H.action(14,0);emu:write8(H.PM+16,1)
+ H.warp(0,0,504,504);H.wait(30);H.openFloor()
+ local x,y=H.r32(H.P+44),H.r32(H.P+48)
+ emu:write8(0x2002AEA,8);emu:write8(H.P+20,2)
+ H.menu(29,1);H.option('actorSpawn',3);H.press(1);H.wait(75);H.close();state('first')
+ local e=H.r32(H.PM+H.L.actorSelected);assert(e>=0x30015A0 and e<0x3003BE0)
+ emu:write32(H.P+44,H.r32(e+44));emu:write32(H.P+48,H.r32(e+48));H.wait(140);state('collected')
+ emu:write32(H.P+44,x);emu:write32(H.P+48,y);emu:write8(H.P+20,2);H.wait(10);state('second floor')
+ H.menu(29,1);H.option('actorSpawn',3);state('menu before');H.press(1)
+ for i=1,20 do H.wait(4);state('second return '..i) end
+ H.close();state('second end');H.shot('second_end')
+end)

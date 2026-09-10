@@ -1,0 +1,57 @@
+local out=assert(os.getenv('TMC_TEST_OUTPUT'))
+local H=assert(loadfile(out..'../../tests/gameplay_harness.lua'))()
+local function time(on) H.option('resourceCheats',on and 16 or 0) end
+H.run(function()
+ emu:write8(H.PM+16,1);H.warp(0,0,504,504);H.openFloor()
+ -- Native life update consumes real stats; fixtures activate existing effects,
+ -- not synthetic timer functions. Wisp's negative effect must still expire.
+ emu:write8(0x2002AF2,0x2F);emu:write16(0x2002B04,120)
+ emu:write8(0x2002AF3,0x29);emu:write16(0x2002B06,120)
+ time(false);H.wait(10)
+ H.check(H.r16(0x2002B04)<120 and H.r16(0x2002B06)<120,'OFF consumes charm and picolyte normally')
+ time(true);emu:write16(0x2002B04,1);emu:write16(0x2002B06,1)
+ emu:write8(0x2002AFA,1);emu:write16(0x2002B08,12)
+ H.wait(180);H.shot('buffs_held')
+ H.check(H.r8(0x2002AF2)==0x2F and H.r16(0x2002B04)>0,'charm stays active beyond last tick')
+ H.check(H.r8(0x2002AF3)==0x29 and H.r16(0x2002B06)>0,'picolyte stays active beyond last tick')
+ H.check(H.r8(0x2002AFA)==0 and H.r16(0x2002B08)==0,'negative Wisp item lock still expires')
+ H.check(H.r8(0x3003DBC)<64,'held buffs do not flood particle/entity pool')
+ time(false);H.wait(12)
+ H.check(H.r8(0x2002AF2)==0 and H.r8(0x2002AF3)==0,'OFF restores native beneficial-effect expiry')
+ time(true);H.wait(12);H.check(H.r16(0x2002B04)==0 and H.r16(0x2002B06)==0,'inactive effects are not reactivated')
+ -- Three-minute challenge uses native locationIndex29 + callback, not frame RAM patching.
+ H.warp(0x88,0,120,160);H.wait(60)
+ H.check(H.r8(0x2033A91)==29,'native Dark Hyrule Castle location loaded')
+ time(false);emu:write32(0x2002ECC,600);H.wait(30)
+ H.check(H.r32(0x2002ECC)<600,'native castle deadline decreases OFF')
+ time(true);local t=H.r32(0x2002ECC);H.wait(180)
+ H.check(H.r32(0x2002ECC)==t,'castle deadline held for 180 frames')
+ emu:write32(0x2002ECC,1);H.wait(60)
+ H.check(H.r32(0x2002ECC)==1 and H.r8(H.M+4)==2,'last castle tick does not trigger failure')
+ -- Biggoron is a waiting quest, not a failure deadline; it must complete normally.
+ emu:write32(0x2002ED4,30);H.wait(35)
+ H.check(H.r32(0x2002ED4)==0,'Biggoron waiting timer still completes with Infinite Time ON')
+ H.shot('castle_deadline_held');local castle=emu:saveStateBuffer();time(false);H.wait(90)
+ H.check(H.r32(0x2002ECC)==0 and H.r8(H.M+4)~=2,'OFF restores actual castle timeout sequence')
+ -- Restore native gameplay via the test harness's saved-state fixture, then
+ -- activate an actual EyeSwitch via its native hit/animation state machine.
+ emu:loadStateBuffer(castle);time(false);emu:write32(0x2002ECC,0)
+ H.warp(0,0,504,504);H.openFloor()
+ H.menu(26,1);H.press(1)
+ for key,v in pairs({actorRawKind=6,actorRawId=0x23,actorRawType=0,actorRawType2=0,actorRawTimer=60,actorRawFlags=0,actorRawParent=0}) do H.option(key,v) end
+ H.menu(29,9);H.press(1);H.press(0x80);H.press(0x301);H.close();H.wait(12)
+ local e=H.r32(H.PM+H.L.actorSelected);assert(e>=0x30015A0 and e<0x3003BE0,'EyeSwitch absent')
+ emu:write16(e+0x84,0x801E);emu:write16(e+0x86,0x801D)
+ -- Collision fixture only: the action and animation are advanced natively.
+ emu:write32(e+0x4C,H.P);emu:write8(H.P+21,0);emu:write8(e+0x41,0x95)
+ H.wait(60);H.check(H.r8(e+12)==3,'native EyeSwitch activated after hit animation')
+ local left=H.r16(e+0x70);H.wait(10);H.check(H.r16(e+0x70)<left,'eye-switch deadline runs OFF')
+ time(true);emu:write16(e+0x70,1);H.wait(180);H.shot('eye_switch_held')
+ H.check(H.r8(e+12)==3 and H.r16(e+0x70)==1,'eye-switch stays active at last tick with ON')
+ local heldEye=emu:saveStateBuffer()
+ time(false);H.wait(60);H.check(H.r8(e+12)==1,'OFF restores eye-switch closing and rearming')
+ emu:loadStateBuffer(heldEye);time(true)
+ emu:write16(e+0x84,0x4002);emu:write8(0x2002C9C,H.r8(0x2002C9C)|4) -- RAM-only permanent completion flag.
+ H.wait(15)
+ H.check(H.r8(e+12)==3 and H.r8(e+14)==0,'native permanent-completion branch remains active with Infinite Time')
+end)

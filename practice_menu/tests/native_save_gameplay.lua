@@ -1,0 +1,22 @@
+local out=assert(os.getenv('TMC_TEST_OUTPUT'))
+local H=assert(loadfile(out..'../../tests/gameplay_harness.lua'))()
+H.run(function()
+ H.action(14,0)
+ for row=8,9 do H.menu(16,row);H.press(1);H.press(0x40);H.press(1);H.close() end
+ H.press(8);H.wait(65);H.shot('native_pause')
+ H.log(string.format('main=%d/%d/%d inventory=%04X',H.r8(H.M+2),H.r8(H.M+3),H.r8(H.M+4),H.r16(0x2002B32)))
+ if not H.check(H.r8(H.M+4)==7 and H.r8(H.PM+13)==0,'native START opens inventory with Four Sword only') then return end
+ -- Native save button selection, not a save-memory or save-function injection.
+ emu:write8(0x2000083,16);H.log('FIXTURE native pause cursor selects SAVE button');H.wait(5);H.press(1);H.wait(60);H.shot('save_confirmation')
+ H.log(string.format('save screen=%d type=%d cursor=%d',H.r8(0x2034491),H.r8(0x2000085),H.r8(0x2000083)))
+ H.press(0x40);H.press(1);H.wait(180);H.shot('save_finished')
+ H.log(string.format('after save screen=%d type=%d',H.r8(0x2034491),H.r8(0x2000085)))
+ H.press(1);H.wait(60);H.press(8);H.wait(90)
+ emu:reset();H.log('NATIVE emulator reset after native save');H.boot()
+ H.check(H.item(6)==1 and H.r8(0x2002AF4)==6,'native reset/load preserves Four Sword ownership and equipment')
+ H.check(H.r8(0x2002AF0)==136 and H.item(62)==1 and H.r8(0x2002B6B)==99,'native save/reset/load preserves figures, medal and fragment bag')
+ H.wait(26,1);H.wait(55);local x=H.r32(H.P+44);H.wait(12,0x20);H.wait(4)
+ H.check(H.r16(H.S+8)~=0 and H.r32(H.P+44)~=x,'Four Sword charge cancellation and movement after native save/reset/load')
+ H.menu(2,0);H.shot('after_reload_menu');H.close()
+ H.check(H.r8(H.M+4)==2,'Practice Menu still opens and closes after save/load')
+end)

@@ -1,0 +1,11 @@
+local out=assert(os.getenv('TMC_TEST_OUTPUT'))
+local H=assert(loadfile(out..'../../tests/gameplay_harness.lua'))()
+H.run(function()
+ for _,page in ipairs({0,1,2,9,3,15,16,11,19,20,13,21,22,23,24,25,26,27,28,29,30}) do H.menu(page,0);H.shot('page_'..page) end
+ H.menu(8,0);H.option('selectedArea',3);H.option('selectedRoom',1);H.wait(3);H.shot('warp_named_native')
+ H.option('selectedArea',0x22);H.option('selectedRoom',0x11);H.wait(3);H.shot('warp_named_unverified')
+ H.menu(19,1);H.press(1);H.shot('known_flag_readback');emu:write8(H.PM+H.L.cursor+19,2);H.press(1)
+ H.menu(20,2);H.option('flagBank',0);emu:write16(H.PM+H.L.flagIndex,0x31);H.press(1);H.shot('raw_flag_readback');emu:write8(H.PM+H.L.cursor+20,3);H.press(1)
+ H.menu(3,5);H.press(1);H.shot('delete_default_no');H.check(H.r8(H.PM+H.L.cursor+17)==0,'Delete confirmation is NO in visible menu')
+ H.close();H.check(H.r8(H.M+4)==2,'all pages return safely to gameplay')
+end)

@@ -1,0 +1,10 @@
+local out=assert(os.getenv('TMC_TEST_OUTPUT'))
+local H=assert(loadfile(out..'../../tests/gameplay_harness.lua'))()
+H.run(function()
+ local mirror=out:find('bad_primary')~=nil
+ H.check(H.hotkey()==(mirror and 0x204 or 0x304),'v2 settings: valid mirror or safe default hotkey')
+ H.check(H.r16(H.PM+H.L.confirmHotkey)==(mirror and 9 or 0x301),'v2 settings: safe confirmation keys')
+ H.check(H.r8(H.PM+H.L.favorites)==(mirror and 3 or 255),'v2 settings: favorites follow record validity')
+ H.menu(13,2);H.shot('v2_settings_recovery');H.close()
+ H.check(H.r8(H.M+4)==2,'menu/gameplay usable after corrupted settings')
+end)
