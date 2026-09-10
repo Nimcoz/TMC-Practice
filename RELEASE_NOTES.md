@@ -8,9 +8,7 @@ with separate **USA, Europe and Japan BPS patches**.
 - `TMC-Practice-v1.0.0-USA.bps` — original USA release.
 - `TMC-Practice-v1.0.0-Europe.bps` — original European multilingual release.
 - `TMC-Practice-v1.0.0-Japan.bps` — original Japanese release.
-- `TMC-Practice-v1.0.0-patches.zip` — all three patches, English/German guides and checksums.
 - `TMC-Practice-v1.0.0-source.zip` — source, build tools and tests; no ROM/save files.
-- `SHA256SUMS.txt` — release download checksums.
 
 Apply exactly one matching patch to a **clean original ROM**. Back up your save,
 start the patched ROM normally, and press **L + R + Select**. Do not use an old
