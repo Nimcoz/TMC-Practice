@@ -15,7 +15,7 @@ MANIFEST_SHA256 = "971DE38A538C8E43B4DDE6DF6255A21D5B474B8A742409518C0E26DC7705B
 ROM_BASE = 0x08000000
 ROM_SIZE = 0x02000000
 MODULE_OFFSET = 0x01020000
-EXPLORATION_OFFSET = 0x01010000
+EXPLORATION_OFFSET = 0x01070000
 
 
 def sha1(data: bytes) -> str:
@@ -86,6 +86,7 @@ def expected_rom(clean: bytes, module: bytes, exploration: bytes, symbols: dict[
     write_tail_stub(rom, 0x08074200, symbols["PitDispatch"])
     write32(rom, 0x0811C150, symbols["SurfaceMinishFrontDispatch"] | 1)
     write32(rom, 0x0811C184, symbols["Surface21Dispatch"] | 1)
+    write32(rom, 0x0811C190, symbols["SurfaceLavaDispatch"] | 1)
     write16(rom, 0x08077D90, 0xE018)
     write16(rom, 0x08077DA2, 0xD10F)
     write_tail_stub(rom, 0x080526A0, symbols["Cheats_ModHealth"])

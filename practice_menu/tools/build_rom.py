@@ -14,7 +14,7 @@ EXPLORATION_SHA256 = "A284A537A5A174769E355572B287A6A1172C025F5C50EB52569A9933DE
 ROM_BASE = 0x08000000
 ROM_SIZE = 0x02000000
 MODULE_OFFSET = 0x01020000
-EXPLORATION_OFFSET = 0x01010000
+EXPLORATION_OFFSET = 0x01070000
 
 
 def parse_symbols(path: Path) -> dict[str, int]:
@@ -139,6 +139,7 @@ def main() -> None:
     expect(rom, 0x08074200, "10 B5 04 1C")
     expect(rom, 0x0811C150, "39 46 07 08")
     expect(rom, 0x0811C184, "9D 47 07 08")
+    expect(rom, 0x0811C190, "19 49 07 08")
     expect(rom, 0x08100CC4, "89 19 05 08")
     expect(rom, 0x08100CBC, "81 D3 0A 08")
     expect(rom, 0x08100CC0, "51 04 05 08")
@@ -206,6 +207,7 @@ def main() -> None:
     write_tail_stub(rom, 0x08074200, pit)
     write32(rom, 0x0811C150, minish_front | 1)
     write32(rom, 0x0811C184, surface21 | 1)
+    write32(rom, 0x0811C190, require_symbol(symbols, "SurfaceLavaDispatch") | 1)
 
     write32(rom, 0x08100CBC, require_symbol(symbols,"PracticeScreenTaskWrapper") | 1)
     write32(rom, 0x08100CCC, require_symbol(symbols,"PracticeScreenTaskWrapper") | 1)
