@@ -3,18 +3,18 @@
 [English](README_EN.md) · [Deutsch](README_DE.md) · [Français](README_FR.md) · [Español](README_ES.md) · [Italiano](README_IT.md) · [日本語](README_JA.md)
 
 TMC Practice ergänzt **The Legend of Zelda: The Minish Cap** um ein Practice- und Explorationsmenü.
-Für **v1.0.0** gibt es getrennte BPS-Patches für USA, Europa und Japan.
+Für **v1.0.1** gibt es getrennte BPS-Patches für USA, Europa und Japan.
 Übersetzt ist diese Anleitung; **das Practice-Menü selbst bleibt Englisch**.
 Die europäische Sprachauswahl und die japanischen Spieltexte bleiben erhalten.
 Die englischen Menübezeichnungen stehen hier unverändert, damit du sie im Spiel wiederfindest.
 
 ## 1. Download und Installation
 
-1. Öffne [TMC Practice v1.0.0](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.0).
+1. Öffne [TMC Practice v1.0.1](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.1).
 2. Lade genau einen Patch für die **Region deiner Original-ROM**, unabhängig von der Sprache dieser Anleitung:
-   - USA: `TMC-Practice-v1.0.0-USA.bps`.
-   - Europa (Englisch, Französisch, Deutsch, Spanisch, Italienisch): `TMC-Practice-v1.0.0-Europe.bps`.
-   - Japan: `TMC-Practice-v1.0.0-Japan.bps`.
+   - USA: `TMC-Practice-v1.0.1-USA.bps`.
+   - Europa (Englisch, Französisch, Deutsch, Spanisch, Italienisch): `TMC-Practice-v1.0.1-Europe.bps`.
+   - Japan: `TMC-Practice-v1.0.1-Japan.bps`.
 3. Sichere deinen normalen Spielstand in einer separaten Kopie.
 4. Wende den BPS-Patch mit einem BPS-kompatiblen Patcher auf deine **unveränderte Original-ROM** an.
 5. Öffne die erzeugte `.gba` in deinem Emulator und verwende einen normalen Spielstand derselben Region.
@@ -94,12 +94,21 @@ können Abstürze und unspielbare Räume verursachen. Einen Boss zu entfernen z�
 - **Break Free:** schließt aktiven Text über den nativen Schließzustand und gibt Link wieder frei. Bereits ausgeführte Story-Skripte werden nicht rückgängig gemacht; spätere Skripte können die Steuerung wieder übernehmen.
 - **Infinite Time:** umfasst Anjus Hühner-Countdown, den Countdown im dunklen Schloss Hyrule, zeitbegrenzte Augenschalter-Aktivierung und bereits aktive Amulett-/Glückstrank-Laufzeiten. Es stoppt nicht jeden Timer, jede Animation oder Zwischensequenz. Ausschalten, damit Countdowns ausgewertet, Belohnungen vergeben und zeitbegrenzte Effekte beendet werden können.
 
+## No-Clip und Lava
+
+Mit **MOVEMENT → NO CLIP** kann Link jetzt über Lavaboden laufen, ohne zu
+verbrennen oder hochzuspringen. Ausschalten stellt die normale Gefahr wieder her.
+Das ist keine allgemeine Unverwundbarkeit gegen Gegner oder jede Flamme/jedes
+Projektil. Updates auf die unveränderte Original-ROM anwenden, nicht auf alte
+Practice-/Diagnose-ROMs. Den normalen Spielstand derselben Region vorher sichern.
+
 ## 8. Tests, Probleme und Mitarbeit
 
-Der Release bestand **166 automatisierte mGBA-Testreihen: 53 USA + 113 EU/JP**.
-Der Projekt-Tester bestätigte zusätzlich Menüöffnung und No-Clip in seinem Emulator.
-Eine vollständige Android-Abnahme jeder Region wurde nicht dokumentiert; echte
-GBA-Hardware wurde nicht getestet. Siehe [Testnachweise](VERIFICATION.md).
+v1.0.1 bestand 17 gezielte mGBA-Testreihen über alle drei Regionen sowie unabhängige
+ROM-Rekonstruktionen und Neubauten aus dem veröffentlichten Source. Der EU-Hardware-Fix
+wurde auf GBA SP AGS-101 mit EZ-Flash Omega Definitive Edition bestätigt; der kombinierte
+Lava-Build wurde noch nicht separat auf echter Hardware getestet. Die 166 Testreihen
+gehören zu v1.0.0. Siehe [Testnachweise und Umfang](VERIFICATION.md).
 
 Fehler über [Issues](https://github.com/Nimcoz/TMC-Practice/issues) melden: Region,
 Patch-Version, Emulator samt Version, genaue Schritte und gegebenenfalls Screenshot.

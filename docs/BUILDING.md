@@ -12,8 +12,8 @@ Put the GNU Arm bin directory on PATH (or install it under `practice_menu/toolch
 ./practice_menu/build.ps1 -Rom 'C:/your-roms/Legend of Zelda, The - The Minish Cap (USA).gba'
 ```
 
-The historical output filename `TMC_Practice_USA_SCENES_TEST.gba` is intentional:
-v1.0.0 promotes exactly that tested binary without changing the runtime.
+The historical output filename `TMC_Practice_USA_SCENES_TEST.gba` is retained.
+The release version is identified by its source revision and output fingerprint.
 
 ## Europe and Japan
 
@@ -34,9 +34,9 @@ with ROM_COMPATIBILITY.md; keep every generated ROM local.
 python practice_menu/tools/bps.py verify ORIGINAL.gba BUILT.gba PATCH.bps
 ```
 
-The three release BPS files have historical metadata and are deliberately copied
-unchanged. Generating a new BPS with different metadata can change the patch hash
-while producing the same ROM. Verify the resulting ROM bytes as well.
+The release patches use metadata `TMC Practice v1.0.1 | REGION | Original ROM only`,
+where REGION is `USA`, `Europe` or `Japan`. Generating a BPS with different metadata
+can change the patch hash while producing the same ROM. Verify the ROM bytes too.
 
 ## Tests and sealed Exploration component
 
@@ -51,3 +51,13 @@ mechanical reconstruction script and seed dependencies under
 regional builds relocate exactly six native literal words. Historical helper
 defaults reference local development paths; supply/edit your own local paths
 when separately reproducing that component. Do not alter it just to rename a release.
+
+Since v1.0.1 this unchanged component is placed at `09070000`, outside both
+the first 128 KiB of ROM expansion and the menu module's reserved area.
+The lava-floor hook is a separate reversible wrapper in `hooks.c`.
+
+`noclip_lava_gameplay.lua` uses an existing native Cave of Flames lava runway.
+Set `TMC_HARDWARE_HARNESS` to the absolute path of the appropriate USA/regional
+`gameplay_harness.lua` and run it with a same-region save through `run_probe.ps1`.
+The test moves the fixture using native room transitions; it does not replace tiles,
+force lava actions, repair coordinates during play or suppress test failures.

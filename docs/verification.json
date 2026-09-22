@@ -1,57 +1,163 @@
 {
   "project": "TMC Practice",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "regions": {
     "USA": {
-      "patch": "TMC-Practice-v1.0.0-USA.bps",
-      "patch_bytes": 77448,
-      "patch_sha256": "557E139191B88CFB3BD58EFDB0BD246C0A334713F113E39455501E031BEC68F0",
+      "patch": "TMC-Practice-v1.0.1-USA.bps",
+      "patch_bytes": 77486,
+      "patch_sha256": "E7C431BBFE838967FE9F620E10C051F13F1E1C2CEE469587DE6319A0AF59FF1A",
       "original_rom_sha1": "B4BD50E4131B027C334547B4524E2DBBD4227130",
-      "patched_rom_sha256": "F904805865084590157C9592DE791513A49DA9570B4B40C81343E75D37E3747C",
-      "exact_tested_patch_bytes": true,
-      "reapplied_on_original_rom": true,
-      "runtime_source_unchanged": true
+      "patched_rom_sha256": "FE8AA8DEFF5082270E659EE9C233E0E283BF78EEAD65624250122E24FD16F32D",
+      "independent_reconstruction": true,
+      "public_source_rebuild_identical": true,
+      "bps_round_trip_identical": true,
+      "exploration_address": "09070000",
+      "sealed_payload_sha256": "A284A537A5A174769E355572B287A6A1172C025F5C50EB52569A9933DEC12361",
+      "emulator_suites": [
+        {
+          "name": "v101_usa_held_items_gameplay",
+          "result": "PASS",
+          "trace_sha256": "593843B34EBDADDC56496D9F63DD83E80E862FABAC8B027D8308EAC9C71C076C",
+          "assertions": 5
+        },
+        {
+          "name": "v101_usa_lava",
+          "result": "PASS",
+          "trace_sha256": "319FDE84FEB5C5FD4AEB2FD1F316971AC1D4FE9AD29E894F6D938B026120A659",
+          "assertions": 6
+        },
+        {
+          "name": "v101_usa_movement_exploration_gameplay",
+          "result": "PASS",
+          "trace_sha256": "12A1ABA9E9630550B6DAD8583988AE9117AD361DB2207019D52C8A4C686C576F",
+          "assertions": 18
+        },
+        {
+          "name": "v101_usa_noclip_menu_hardware",
+          "result": "PASS",
+          "trace_sha256": "02663EACEA9D065F69EB1F6D419BEA926303D807F9F210AC913C2DF4C2BEB415",
+          "assertions": 22
+        },
+        {
+          "name": "v101_usa_protected_physics_gameplay",
+          "result": "PASS",
+          "trace_sha256": "65C5B9DA49218E8028BB5C080259C3903ACE5D439D37572944D25DB6D730BB6F",
+          "assertions": 5
+        }
+      ]
     },
     "Europe": {
-      "patch": "TMC-Practice-v1.0.0-Europe.bps",
-      "patch_bytes": 77552,
-      "patch_sha256": "E94EA90CA949D47EBEED89FC55643170D483CFD29BDC960C974C8B9E33F59548",
+      "patch": "TMC-Practice-v1.0.1-Europe.bps",
+      "patch_bytes": 77487,
+      "patch_sha256": "1843BAA8125839B15436DE8ACE84EA0AAD5398FFF5F22B5C9DBAEE0764B73445",
       "original_rom_sha1": "CFF199B36FF173FB6FAF152653D1BCCF87C26FB7",
-      "patched_rom_sha256": "62D637180364C24194A0027A993DB0A1FE69B7F6D753C41E02884D407C09FD25",
-      "exact_tested_patch_bytes": true,
-      "reapplied_on_original_rom": true,
-      "runtime_source_unchanged": true
+      "patched_rom_sha256": "5CFB69CD5286C41E2C9F511E097A526E4D9B425CE80BA7F467508140B10B3049",
+      "independent_reconstruction": true,
+      "public_source_rebuild_identical": true,
+      "bps_round_trip_identical": true,
+      "exploration_address": "09070000",
+      "sealed_payload_sha256": "DB81D334FB3B9EE2E2F6A1CA3DDB37480D90863FF59031936F6B890ED375454A",
+      "emulator_suites": [
+        {
+          "name": "v101_eu_hardware_actor_invariants",
+          "result": "PASS",
+          "trace_sha256": "9EF7986E211CB3CAFB8C95E76A71873292145974B1A5CC7499EA1D0E91CDBA1F",
+          "assertions": 26
+        },
+        {
+          "name": "v101_eu_hardware_relocated_payload",
+          "result": "PASS",
+          "trace_sha256": "0823F6A41B97BCD44F1AD7A7250B56A4519BCC963A9CD8912651BE6655402CD3",
+          "assertions": 194
+        },
+        {
+          "name": "v101_eu_held_items_gameplay",
+          "result": "PASS",
+          "trace_sha256": "418FB1DE8C7106C527C5A82DEDF54239B057712EAD95D408BB70CD60D80BF244",
+          "assertions": 5
+        },
+        {
+          "name": "v101_eu_lava",
+          "result": "PASS",
+          "trace_sha256": "18E7032F5B54A621ECC0F954F5D69B440090AB73ECC49E92FDED423C0A0A7BAC",
+          "assertions": 6
+        },
+        {
+          "name": "v101_eu_movement_exploration_base_fixture",
+          "result": "PASS",
+          "trace_sha256": "5E21EA052A1CDA2E62213B14D95C47E55741884717F5C59A66CABA9A9FFE6C3C",
+          "assertions": 18
+        },
+        {
+          "name": "v101_eu_noclip_menu_hardware",
+          "result": "PASS",
+          "trace_sha256": "6B8946B23B13F456AD5B368B8F60EE7C0DE56C8A0EEA90957927726297F78B42",
+          "assertions": 22
+        },
+        {
+          "name": "v101_eu_protected_physics_gameplay",
+          "result": "PASS",
+          "trace_sha256": "8E797B30DCEEAA45DDD5C934CA3F3D6F64907E9BD3F99BAE0A6F774FF84C79FE",
+          "assertions": 5
+        }
+      ]
     },
     "Japan": {
-      "patch": "TMC-Practice-v1.0.0-Japan.bps",
-      "patch_bytes": 77556,
-      "patch_sha256": "A47CF4F95409795019A687E475E1C9DCDDCD301DA1419BA2F82891775E6E055B",
+      "patch": "TMC-Practice-v1.0.1-Japan.bps",
+      "patch_bytes": 77490,
+      "patch_sha256": "BBEF5675357048649F0C7C4DB912A716C0C0A5DFED263582E2AF2CD201B71361",
       "original_rom_sha1": "6C5404A1EFFB17F481F352181D0F1C61A2765C5D",
-      "patched_rom_sha256": "753F68A149F50089EE80A554527DE730BE4317F17B2F8C7D7A32187529E4AD78",
-      "exact_tested_patch_bytes": true,
-      "reapplied_on_original_rom": true,
-      "runtime_source_unchanged": true
+      "patched_rom_sha256": "245E87147BB5AB389C873A0BE6F7CDC27257D48F5C4FD5D49D1E4F69B9848466",
+      "independent_reconstruction": true,
+      "public_source_rebuild_identical": true,
+      "bps_round_trip_identical": true,
+      "exploration_address": "09070000",
+      "sealed_payload_sha256": "9D1ACCB525EACDCE13FBF9A2AAF5FF89CFAACA7DBCA730553CEA4BC2EBBEEE80",
+      "emulator_suites": [
+        {
+          "name": "v101_jp_held_items_gameplay",
+          "result": "PASS",
+          "trace_sha256": "593843B34EBDADDC56496D9F63DD83E80E862FABAC8B027D8308EAC9C71C076C",
+          "assertions": 5
+        },
+        {
+          "name": "v101_jp_movement_exploration_gameplay",
+          "result": "PASS",
+          "trace_sha256": "D22EC7FF22550A53BED90B46FBC7B172FCC03F50B43102BB86CBE6D6CF164E3A",
+          "assertions": 18
+        },
+        {
+          "name": "v101_jp_noclip_lava_gameplay",
+          "result": "PASS",
+          "trace_sha256": "525320BFAC69088881AAE8F73FB481E7EF7B80B22D9580CA006915E648301815",
+          "assertions": 6
+        },
+        {
+          "name": "v101_jp_noclip_menu_hardware",
+          "result": "PASS",
+          "trace_sha256": "66DCB217BFC77286DE9FA0EBE9D47B6578EE016B3A989B9795688C6AF5716848",
+          "assertions": 22
+        },
+        {
+          "name": "v101_jp_protected_physics_gameplay",
+          "result": "PASS",
+          "trace_sha256": "65C5B9DA49218E8028BB5C080259C3903ACE5D439D37572944D25DB6D730BB6F",
+          "assertions": 5
+        }
+      ]
     }
   },
-  "automated_mgba_suites": 166,
-  "usa_suites": 53,
-  "eu_jp_suites": 113,
-  "complete_native_scene_replays": true,
-  "native_save_restore_bytes": 1204,
-  "eu_languages_tested": [
-    "English",
-    "French",
-    "German",
-    "Spanish",
-    "Italian"
-  ],
-  "native_blank_eeprom_new_game_tested": [
-    "Europe",
-    "Japan"
-  ],
-  "user_report": "Tester reported menu opens and No-Clip works in tested locations; exact per-region Android matrix not specified.",
-  "physical_hardware_tested": false,
-  "publication_runtime_changes": false,
-  "qa_method": "Exact-hash mGBA suites, independent ROM reconstruction, fresh source rebuilds, framebuffer and EEPROM audits.",
-  "private_fixtures_distributed": false
+  "hardware_confirmation": {
+    "region": "Europe",
+    "console": "GBA SP AGS-101",
+    "flashcart": "EZ-Flash Omega Definitive Edition",
+    "scope": "User confirmed the isolated payload-relocation fix. The combined v1.0.1 lava build is emulator-tested, not separately hardware-confirmed."
+  },
+  "fixture_note": {
+    "result": "PRECONDITION_NOT_REACHED_ON_BOTH_BUILDS",
+    "detail": "The early-progress user save does not reach the charged-sword prerequisite, on both accepted Fix1 and v1.0.1. The complete movement suite is rerun on the established regional progress fixture.",
+    "current_trace_sha256": "F3924EF7BEDA911E03F4EF08780A5869C726479EAD7D19869C6FDA5611AB39C9",
+    "baseline_trace_sha256": "F3924EF7BEDA911E03F4EF08780A5869C726479EAD7D19869C6FDA5611AB39C9"
+  },
+  "emulator_suite_count": 17
 }

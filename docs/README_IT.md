@@ -3,18 +3,18 @@
 [English](README_EN.md) · [Deutsch](README_DE.md) · [Français](README_FR.md) · [Español](README_ES.md) · [Italiano](README_IT.md) · [日本語](README_JA.md)
 
 TMC Practice aggiunge un menu di allenamento ed esplorazione a **The Legend of Zelda: The Minish Cap**.
-La versione **v1.0.0** offre patch BPS separate per USA, Europa e Giappone.
+La versione **v1.0.1** offre patch BPS separate per USA, Europa e Giappone.
 Questa guida è tradotta; **il menu Practice rimane in inglese**.
 La selezione delle lingue europee e i testi giapponesi del gioco sono conservati.
 I nomi inglesi delle opzioni sono mantenuti qui sotto per ritrovarli nel gioco.
 
 ## 1. Download e installazione
 
-1. Apri [TMC Practice v1.0.0](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.0).
+1. Apri [TMC Practice v1.0.1](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.1).
 2. Scarica una sola patch per la **regione della tua ROM originale**, non per la lingua di questa guida:
-   - USA: `TMC-Practice-v1.0.0-USA.bps`.
-   - Europa (inglese, francese, tedesco, spagnolo, italiano): `TMC-Practice-v1.0.0-Europe.bps`.
-   - Giappone: `TMC-Practice-v1.0.0-Japan.bps`.
+   - USA: `TMC-Practice-v1.0.1-USA.bps`.
+   - Europa (inglese, francese, tedesco, spagnolo, italiano): `TMC-Practice-v1.0.1-Europe.bps`.
+   - Giappone: `TMC-Practice-v1.0.1-Japan.bps`.
 3. Crea una copia di sicurezza separata del tuo normale salvataggio di gioco.
 4. Applica la patch BPS alla **ROM originale non modificata** con uno strumento compatibile con BPS.
 5. Apri il file `.gba` ottenuto nell'emulatore e usa un salvataggio normale della stessa regione.
@@ -99,12 +99,21 @@ o attori genitori possono causare arresti o blocchi del gioco. Rimuovere un boss
 - **Break Free:** chiude il testo attivo attraverso lo stato di chiusura nativo e restituisce il controllo al giocatore. Non annulla script già eseguiti; script successivi possono riprendere il controllo.
 - **Infinite Time:** comprende il conto alla rovescia delle galline di Anju, quello del Castello di Hyrule oscuro, l'attivazione temporanea degli interruttori a forma di occhio e la durata di amuleti/pozioni della fortuna già attivi. Non blocca tutti i timer, le animazioni o i filmati. Disattivalo per consentire la valutazione dei conti alla rovescia, le ricompense e la conclusione degli effetti temporanei.
 
+## No-Clip e lava
+
+**MOVEMENT → NO CLIP** permette di camminare sulla lava senza bruciare o rimbalzare.
+Disattivandolo torna il pericolo normale. Non è un'invulnerabilità generale contro
+nemici o tutte le fiamme e i proiettili. Applica gli aggiornamenti alla ROM originale
+non modificata, non a una vecchia ROM Practice/diagnostica, e conserva una copia
+del salvataggio della stessa regione.
+
 ## 8. Test, problemi e collaborazione
 
-Questa versione ha superato **166 suite automatizzate di mGBA: 53 USA + 113 EU/JP**.
-Il tester del progetto ha anche confermato apertura del menu e No-Clip nel suo
-emulatore. Non è stata documentata una verifica completa su Android per ogni regione;
-non sono stati eseguiti test su una GBA reale. Vedi le [verifiche](VERIFICATION.md).
+La v1.0.1 ha superato 17 suite mGBA mirate sulle tre regioni, oltre ai controlli
+di ricostruzione delle ROM e compilazione dai sorgenti pubblicati. La correzione EU
+è stata confermata su GBA SP AGS-101 con EZ-Flash Omega Definitive Edition; la versione
+combinata con la lava non è ancora stata provata separatamente su hardware reale.
+Le 166 suite riguardano la v1.0.0. Vedi [verifiche e limiti](VERIFICATION.md).
 
 Segnala i problemi in [Issues](https://github.com/Nimcoz/TMC-Practice/issues), indicando
 regione, versione della patch, emulatore e versione, passaggi e, se utile, uno screenshot.

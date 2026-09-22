@@ -16,6 +16,17 @@ The Practice menu itself remains in English.
 - Saved custom bindings override the defaults. Menu settings persist separately
   from native progress; never assume unsaved gameplay is automatically saved.
 
+## No-Clip and lava
+
+Enable **NO CLIP** under **MOVEMENT** to cross walls, cliffs, pits and lava floors.
+Lava-floor burning and bouncing are bypassed while No-Clip is enabled. Turning it
+off restores the native hazard, including when Link is still standing over lava.
+This is not general invincibility against enemies or every flame/projectile.
+
+To upgrade to v1.0.1, apply the new regional BPS to a clean original ROM, not an
+old Practice or diagnostic ROM. Back up and reuse your normal same-region save;
+do not reuse old emulator savestates. The release contains no diagnostic screen.
+
 ## Story replays
 
 WORLD / WARP contains STORY INTRO, ENDING / CREDITS and RETURN FROM REPLAY.

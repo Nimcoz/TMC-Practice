@@ -3,18 +3,18 @@
 [English](README_EN.md) · [Deutsch](README_DE.md) · [Français](README_FR.md) · [Español](README_ES.md) · [Italiano](README_IT.md) · [日本語](README_JA.md)
 
 TMC Practice adds a practice and exploration menu to **The Legend of Zelda: The Minish Cap**.
-Version **v1.0.0** has separate BPS patches for USA, Europe and Japan.
+Version **v1.0.1** has separate BPS patches for USA, Europe and Japan.
 This guide is translated; **the Practice menu itself remains in English**.
 The original EU language selection and Japanese game text are preserved.
 English menu labels are kept below so you can find them in the game.
 
 ## 1. Download and installation
 
-1. Open [TMC Practice v1.0.0](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.0).
+1. Open [TMC Practice v1.0.1](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.1).
 2. Download exactly one patch for your **original ROM's region**, not this guide's language:
-   - USA: `TMC-Practice-v1.0.0-USA.bps`.
-   - Europe (English, French, German, Spanish, Italian): `TMC-Practice-v1.0.0-Europe.bps`.
-   - Japan: `TMC-Practice-v1.0.0-Japan.bps`.
+   - USA: `TMC-Practice-v1.0.1-USA.bps`.
+   - Europe (English, French, German, Spanish, Italian): `TMC-Practice-v1.0.1-Europe.bps`.
+   - Japan: `TMC-Practice-v1.0.1-Japan.bps`.
 3. Make a separate backup of your normal in-game save.
 4. Apply the BPS patch to your **unmodified original ROM** with a BPS-compatible patcher.
 5. Open the resulting `.gba` in your emulator and use a normal save from the same region.
@@ -94,12 +94,20 @@ If necessary, reload without saving.
 - **Break Free:** closes active text through the native close state and releases player control. It does not undo executed story scripts; later scripts may take control again.
 - **Infinite Time:** covers Anju's chicken countdown, the Dark Hyrule Castle countdown, timed eye-switch activation and already-active charm/luck-potion durations. It does not freeze every timer, animation or cutscene. Turn it off to allow countdown evaluation/rewards and timed effects to finish.
 
+## No-Clip and lava
+
+**MOVEMENT → NO CLIP** now lets Link walk over lava floors without the lava burn
+or bounce. Disabling it restores the normal hazard. It is not general immunity
+to enemies or every flame/projectile. Apply updates to a clean original ROM,
+not an older Practice/diagnostic ROM; keep a backup of your same-region save.
+
 ## 8. Testing, problems and contributions
 
-The release passed **166 automated mGBA suites: 53 USA + 113 EU/JP**. The project
-tester also confirmed menu opening and No-Clip in their emulator. A complete
-Android acceptance test for every region was not documented; real GBA hardware
-was not tested. See [verification](VERIFICATION.md).
+v1.0.1 passed 17 focused mGBA suites across all three regions, plus independent
+ROM reconstruction and fresh-source rebuild checks. The EU hardware fix was
+confirmed on a GBA SP AGS-101 with EZ-Flash Omega Definitive Edition; the combined
+lava build has not been separately hardware-tested. The 166-suite result belongs
+to v1.0.0. See [verification and scope](VERIFICATION.md).
 
 Report bugs in [Issues](https://github.com/Nimcoz/TMC-Practice/issues) with region,
 patch version, emulator/version, reproduction steps and a screenshot if useful.

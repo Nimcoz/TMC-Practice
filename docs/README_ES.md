@@ -3,18 +3,18 @@
 [English](README_EN.md) · [Deutsch](README_DE.md) · [Français](README_FR.md) · [Español](README_ES.md) · [Italiano](README_IT.md) · [日本語](README_JA.md)
 
 TMC Practice añade un menú de práctica y exploración a **The Legend of Zelda: The Minish Cap**.
-La versión **v1.0.0** ofrece parches BPS separados para USA, Europa y Japón.
+La versión **v1.0.1** ofrece parches BPS separados para USA, Europa y Japón.
 Esta guía está traducida; **el propio menú Practice sigue en inglés**.
 Se conservan la selección de idiomas europea y los textos japoneses del juego.
 Los nombres ingleses de las opciones se mantienen para que puedas encontrarlas en el juego.
 
 ## 1. Descarga e instalación
 
-1. Abre [TMC Practice v1.0.0](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.0).
+1. Abre [TMC Practice v1.0.1](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.1).
 2. Descarga un solo parche para la **región de tu ROM original**, no para el idioma de esta guía:
-   - USA: `TMC-Practice-v1.0.0-USA.bps`.
-   - Europa (inglés, francés, alemán, español e italiano): `TMC-Practice-v1.0.0-Europe.bps`.
-   - Japón: `TMC-Practice-v1.0.0-Japan.bps`.
+   - USA: `TMC-Practice-v1.0.1-USA.bps`.
+   - Europa (inglés, francés, alemán, español e italiano): `TMC-Practice-v1.0.1-Europe.bps`.
+   - Japón: `TMC-Practice-v1.0.1-Japan.bps`.
 3. Guarda una copia de seguridad independiente de tu partida normal.
 4. Aplica el parche BPS a tu **ROM original sin modificar** con una herramienta compatible con BPS.
 5. Abre el archivo `.gba` resultante en tu emulador y usa una partida normal de la misma región.
@@ -99,12 +99,22 @@ o actor padre pueden bloquear el juego o provocar un fallo. Eliminar un jefe
 - **Break Free:** cierra el texto activo mediante el estado de cierre nativo y devuelve el control al jugador. No deshace scripts ya ejecutados; otros scripts pueden volver a tomar el control.
 - **Infinite Time:** cubre la cuenta atrás de las gallinas de Anju, la del Castillo de Hyrule oscuro, la activación temporal de interruptores con forma de ojo y la duración de amuletos/pociones de suerte ya activos. No congela todos los temporizadores, animaciones o cinemáticas. Desactívalo para permitir la evaluación de las cuentas atrás, las recompensas y la finalización de efectos temporales.
 
+## No-Clip y lava
+
+**MOVEMENT → NO CLIP** permite caminar sobre la lava sin quemaduras ni rebotes.
+Al desactivarlo vuelve el peligro normal. No proporciona invulnerabilidad general
+frente a enemigos ni todas las llamas o proyectiles. Aplica las actualizaciones
+a la ROM original sin modificar, no a una ROM Practice/de diagnóstico anterior,
+y haz una copia de tu partida de la misma región.
+
 ## 8. Pruebas, problemas y colaboración
 
-Esta versión superó **166 conjuntos de pruebas automatizadas de mGBA: 53 USA + 113 EU/JP**.
-El probador del proyecto también confirmó la apertura del menú y No-Clip en su
-emulador. No se documentó una validación completa en Android para cada región;
-no se probó en una GBA real. Consulta la [verificación](VERIFICATION.md).
+La v1.0.1 superó 17 suites específicas de mGBA entre las tres regiones, además
+de comprobaciones de reconstrucción de ROM y compilación desde las fuentes publicadas.
+El arreglo de hardware EU fue confirmado en GBA SP AGS-101 con EZ-Flash Omega
+Definitive Edition; la versión combinada con lava aún no se probó por separado en
+hardware real. Las 166 suites corresponden a v1.0.0.
+Consulta la [verificación y su alcance](VERIFICATION.md).
 
 Comunica errores en [Issues](https://github.com/Nimcoz/TMC-Practice/issues), indicando
 región, versión del parche, emulador y versión, pasos y, si ayuda, una captura.
