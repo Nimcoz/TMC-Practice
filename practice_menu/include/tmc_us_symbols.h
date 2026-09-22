@@ -22,11 +22,14 @@
 #define TMC_PIT_COLLISION_TEST        0x08079C31u
 #define TMC_SURFACE_MINISH_FRONT      0x08074639u
 #define TMC_SURFACE_21                0x0807479Du
+#define TMC_SURFACE_LAVA              0x08074919u
 #define TMC_WRITE_SAVE_FILE           0x0807CF09u
 #define TMC_READ_SAVE_FILE            0x0807CF29u
 
-#define TMC_PROVEN_MOVEMENT           0x09010065u
-#define TMC_PROVEN_EXPLORATION        0x0901008Du
+/* Keep the sealed payload out of the first 128 KiB of the ROM expansion.
+ * Its former location was read incorrectly on the tested EZ-Flash ODE. */
+#define TMC_PROVEN_MOVEMENT           0x09070065u
+#define TMC_PROVEN_EXPLORATION        0x0907008Du
 
 #define ADDR_G_SAVE                   0x02002A40u
 #define ADDR_G_MESSAGE                0x02000050u

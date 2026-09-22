@@ -326,6 +326,7 @@ void ConveyorDispatch(void* entity);
 void PitDispatch(void* entity);
 void SurfaceMinishFrontDispatch(void* entity);
 void Surface21Dispatch(void* entity);
+void SurfaceLavaDispatch(void* entity);
 void ScrollFollowDispatch(void* controls);
 u32 Movement_IsControlled(void);
 u32 Movement_IsSafeGround(s32 x, s32 y);
