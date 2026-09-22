@@ -2,7 +2,7 @@
 
 ## 1.0.1 — No-Clip hardware fix and lava walking
 
-- Fixed the reported No-Clip freeze on real GBA hardware.
+- Fixed a No-Clip freeze on real GBA hardware.
 - Added walking over lava floors with No-Clip enabled. Turning No-Clip off
   restores normal lava behavior.
 - Updated patches for USA, Europe and Japan.
