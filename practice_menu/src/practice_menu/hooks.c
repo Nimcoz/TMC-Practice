@@ -108,6 +108,15 @@ void Surface21Dispatch(void* entity) {
     }
 }
 
+void SurfaceLavaDispatch(void* entity) {
+    /* Surface 0x1C queues PLAYER_LAVA before normal walking can continue.
+     * Bypass only that floor reaction, not health, enemy hits or cutscenes.
+     * OFF calls the untouched native handler, including its airborne guard. */
+    if (!gPracticeState.noClip) {
+        CALL_VOID1(TMC_SURFACE_LAVA)(entity);
+    }
+}
+
 const uptr gPracticeSubtasks[12] = {
     0x080A71DDu, 0x080A4EA1u, 0x080A71DDu, 0x080A64FDu,
     0x080A3B85u, 0x08051E69u, 0x0804AB55u, 0x080A45A5u,
