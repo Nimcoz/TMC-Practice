@@ -1,6 +1,15 @@
-# TMC Practice v1.0.0
+# TMC Practice v1.0.1
 
-The first public release of TMC Practice — a speedrun practice and exploration toolkit for **The Legend of Zelda: The Minish Cap**.
+A No-Clip update for **The Legend of Zelda: The Minish Cap**.
+
+## Changes
+
+- **Hardware freeze fix:** relocates the unchanged No-Clip payload away from the
+  ROM area that returned incorrect data on the tested EZ-Flash Omega Definitive
+  Edition. The isolated EU fix was confirmed on a GBA SP AGS-101.
+- **Lava walking:** No-Clip allows walking over lava floors without burning or
+  bouncing. Turning it off restores the original lava reaction.
+- Updated USA, Europe and Japan patches, source, tests and six language guides.
 
 ## Downloads
 
@@ -8,16 +17,16 @@ Choose the BPS patch for your original ROM's region.
 
 | ROM region | Download |
 | --- | --- |
-| USA | [USA BPS](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-USA.bps) |
-| Europe | [Europe BPS](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-Europe.bps) |
-| Japan | [Japan BPS](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-Japan.bps) |
+| USA | [USA BPS](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.1/TMC-Practice-v1.0.1-USA.bps) |
+| Europe | [Europe BPS](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.1/TMC-Practice-v1.0.1-Europe.bps) |
+| Japan | [Japan BPS](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.1/TMC-Practice-v1.0.1-Japan.bps) |
 
-[Source code](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-source.zip) — includes build tools and tests.
+[Source code](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.1/TMC-Practice-v1.0.1-source.zip) — includes build tools and tests.
 
 ## Getting started
 
 1. Back up your normal in-game save.
-2. Apply one matching BPS patch to an **unmodified original ROM** with a BPS-compatible patcher.
+2. Apply one matching BPS patch to an **unmodified original ROM**, not an older Practice or diagnostic ROM. Do not bypass a source-checksum mismatch.
 3. Open the patched ROM in your emulator with a normal save from the same region.
 4. Press **L + R + Select** to open the menu. Saved custom bindings take precedence.
 
@@ -27,12 +36,20 @@ The Practice menu is in **English**; the original game's language is preserved.
 ## Highlights
 
 - Practice timer and on-screen debug information.
-- No-Clip, free camera and movement tools.
+- No-Clip through walls, cliffs, pits and lava floors; free camera and movement tools.
 - Room warps, favorites and intro/ending replays.
 - Inventory, elements, flags and collection controls.
 - Actor spawning, freeze, editing and two-way teleportation.
 - Resource cheats, Enemy Freeze, Break Free and Infinite Time.
 - Persistent settings, themes and custom button combinations.
+
+## Verification
+
+17 focused mGBA suites across all three regions, independent ROM reconstruction,
+byte-identical public-source rebuilds and checked BPS round trips. The combined
+lava build has not been separately hardware-confirmed; physical confirmation
+applies to the isolated EU freeze fix. Lava walking is not general invincibility
+against enemies or every flame/projectile.
 
 ## Guides
 

@@ -6,9 +6,9 @@ A practice and exploration menu for **The Legend of Zelda: The Minish Cap**, sup
 
 ## Download
 
-**[TMC Practice v1.0.0](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.0)** — choose the BPS patch for your original ROM's region:
+**[TMC Practice v1.0.1](https://github.com/Nimcoz/TMC-Practice/releases/tag/v1.0.1)** — choose the BPS patch for your original ROM's region:
 
-[USA](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-USA.bps) · [Europe](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-Europe.bps) · [Japan](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.0/TMC-Practice-v1.0.0-Japan.bps)
+[USA](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.1/TMC-Practice-v1.0.1-USA.bps) · [Europe](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.1/TMC-Practice-v1.0.1-Europe.bps) · [Japan](https://github.com/Nimcoz/TMC-Practice/releases/download/v1.0.1/TMC-Practice-v1.0.1-Japan.bps)
 
 1. Back up your normal in-game save.
 2. Apply the patch to your **unmodified original ROM** with a BPS-compatible patcher.
@@ -29,7 +29,7 @@ Follow on-screen confirmations for destructive actions and keep a save backup.
 ## Features
 
 - Practice timer and on-screen debug information.
-- No-Clip, free camera and movement tools.
+- No-Clip through walls, cliffs, pits and lava floors; free camera and movement tools.
 - Room warps, favorites and intro/ending replays.
 - Inventory, elements, flags and collection controls.
 - Named actor spawner, freeze, removal and two-way teleporting.
